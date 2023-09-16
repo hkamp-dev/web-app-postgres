@@ -9,6 +9,11 @@ import (
 )
 
 func main() {
+	// add postgres db connection
+	db := router.InitDB()
+	defer db.Close()
+
+	// add router
 	r := router.Router()
 
 	corsWrapper := cors.New(cors.Options{

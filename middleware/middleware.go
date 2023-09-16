@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	"web-app-postgres/domain"
+	"web-app-postgres/domain/product"
 )
 
 func NotImplementedYetHandler(w http.ResponseWriter, r *http.Request) {
@@ -12,7 +12,7 @@ func NotImplementedYetHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func ProductsHandler(w http.ResponseWriter, r *http.Request) {
-	payload, _ := json.Marshal(domain.GetSampleProducts())
+	payload, _ := json.Marshal(product.GetSampleProducts())
 
 	w.Header().Set("Content-Type", "application/json")
 	w.Write([]byte(payload))
